@@ -5,14 +5,16 @@ public class StudentList {
 	public static void main(String[] args)
 	 {
 
+		Constant cons = new Constant();
+
 //		Check arguments
 	 	 if(args.length!=1)
 	 	 {
-	 	 	System.out.println("No argument ");
+	 	 	System.out.println(cons.no_arguments);
 	 	 }
      	else if(args[0].equals("a")) 
 		{
-			System.out.println("Loading data ...");			
+			System.out.println( cons.data);			
 			try
 			 {
 				BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream("students.txt"))); 
@@ -27,21 +29,21 @@ public class StudentList {
 			{
 
 			} 
-			System.out.println("Data Loaded.");
+			System.out.println( cons.datal);
 		}
 		else if(args[0].equals("r")) 
 		{
 			System.out.println("Loading data ...");			
 			try
 			 {
-			BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream("students.txt"))); 
-			String linereader = reader.readLine();
-			//System.out.println(r);
-			String names[] =  linereader.split(",");	
-			int size=names.length;
-			Random random  = new Random();
-			int index = Math.abs(random.nextInt()%size) ;
-			System.out.println(names[index]);
+			   BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream("students.txt"))); 
+			   String linereader = reader.readLine();
+			    //System.out.println(r);
+			   String names[] =  linereader.split(",");	
+			   int size=names.length;
+			   Random random  = new Random();
+			   int index = Math.abs(random.nextInt()%size) ;
+			   System.out.println(names[index]);
 			} 
 			catch (Exception e)
 			{
@@ -106,7 +108,7 @@ public class StudentList {
 			boolean in_word = false;
 			int count=0;
 			for(char character:words)
-			{
+			{ 
 				if(character ==' ') 
 				{
 					if (!in_word)
