@@ -2,35 +2,47 @@ import java.io.*;
 import java.text.*;
 import java.util.*;
 public class StudentList {
-	public static void main(String[] args) {
+	public static void main(String[] args)
+	 {
 
 //		Check arguments
-		if(args[0].equals("a")) {
+		if(args[0].equals("a")) 
+		{
 			System.out.println("Loading data ...");			
-			try {
-			BufferedReader s = new BufferedReader(
-					new InputStreamReader(
-							new FileInputStream("students.txt"))); 
-			String r = s.readLine();
-			String i[] = r.split(",");			
-			for(String j : i) { System.out.println(j); }
-			} catch (Exception e){} 
+			try
+			 {
+				BufferedReader s = new BufferedReader(
+				new InputStreamReader(new FileInputStream("students.txt"))); 
+			    String r = s.readLine();
+			    String i[] = r.split(",");			
+			    for(String j : i)
+				 {
+					  System.out.println(j); 
+				}
+			} 
+			catch (Exception e)
+			{
+
+			} 
 			System.out.println("Data Loaded.");
 		}
 		else if(args[0].equals("r")) 
 		{
 			System.out.println("Loading data ...");			
 			try {
-			BufferedReader s = new BufferedReader(
-					new InputStreamReader(
-							new FileInputStream("students.txt"))); 
+			BufferedReader s = new BufferedReader(new InputStreamReader(new FileInputStream("students.txt"))); 
 			String r = s.readLine();
-			System.out.println(r);
+			//System.out.println(r);
 			String i[] = r.split(",");	
+			int size=i.length;
 			Random x = new Random();
-				int y = x.nextInt();
-					System.out.println(i[y]);
-			} catch (Exception e){} 
+			int y= Math.abs(x.nextInt()%size) ;
+			System.out.println(i[y]);
+			} 
+			catch (Exception e)
+			{
+				
+			} 
 			System.out.println("Data Loaded.");			
 		}
 		else if(args[0].contains("+")){
