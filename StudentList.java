@@ -6,7 +6,11 @@ public class StudentList {
 	 {
 
 //		Check arguments
-		if(args[0].equals("a")) 
+	 	 if(args.length!=1)
+	 	 {
+	 	 	System.out.println("No argument ");
+	 	 }
+     	else if(args[0].equals("a")) 
 		{
 			System.out.println("Loading data ...");			
 			try
@@ -29,7 +33,8 @@ public class StudentList {
 		else if(args[0].equals("r")) 
 		{
 			System.out.println("Loading data ...");			
-			try {
+			try
+			 {
 			BufferedReader s = new BufferedReader(new InputStreamReader(new FileInputStream("students.txt"))); 
 			String r = s.readLine();
 			//System.out.println(r);
@@ -122,6 +127,10 @@ public class StudentList {
 				
 			} 
 			System.out.println("Data Loaded.");				
+		}
+		else
+		{
+			System.out.println("Invalid argument ");
 		}
 	}
 }
